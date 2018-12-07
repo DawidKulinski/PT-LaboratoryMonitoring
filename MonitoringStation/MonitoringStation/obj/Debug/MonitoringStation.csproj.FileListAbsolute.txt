@@ -1,0 +1,7 @@
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\bin\Debug\MonitoringStation.exe.config
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\bin\Debug\MonitoringStation.exe
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\bin\Debug\MonitoringStation.pdb
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.csprojAssemblyReference.cache
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.csproj.CoreCompileInputs.cache
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.exe
+C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.pdb
