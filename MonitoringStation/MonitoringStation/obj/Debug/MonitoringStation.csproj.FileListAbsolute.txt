@@ -5,3 +5,15 @@ C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\Monito
 C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.csproj.CoreCompileInputs.cache
 C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.exe
 C:\Users\dawid\source\repos\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.pdb
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\MonitoringStation.exe.config
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\MonitoringStation.exe
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\MonitoringStation.pdb
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\RabbitMQ.Client.dll
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\bin\Debug\RabbitMQ.Client.xml
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.csprojAssemblyReference.cache
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.csproj.CoreCompileInputs.cache
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.csproj.CopyComplete
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.exe
+D:\PT-LaboratoryMonitoring\MonitoringStation\MonitoringStation\obj\Debug\MonitoringStation.pdb

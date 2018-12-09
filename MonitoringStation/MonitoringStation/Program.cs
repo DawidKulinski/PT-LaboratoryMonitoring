@@ -25,7 +25,7 @@ namespace MonitoringStation
             Console.WriteLine("Listing all current processes:");
             foreach (var s in ProcessUtils.GetProcessList())
             {
-                Console.WriteLine(s);
+                RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s));
             }
             Console.WriteLine("End of the list.");
 

@@ -17,7 +17,9 @@ namespace MonitoringStation.Utils
 
         public static void OnProcessCreated(object sender, EventArrivedEventArgs e)
         {
-            Console.WriteLine($"Process Created: {e.NewEvent.Properties["ProcessName"].Value}");
+            var newProcessName = e.NewEvent.Properties["ProcessName"].Value as string;
+            Console.WriteLine($"Process Created: {newProcessName}");
+            RabbitMqUtils.Send(Encoding.ASCII.GetBytes(newProcessName));
         }
 
     }
