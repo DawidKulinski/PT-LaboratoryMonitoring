@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management;
 using System.Text;
+using System.Configuration;
 using System.Threading;
 using System.Threading.Tasks;
 using MonitoringStation.Utils;
@@ -15,6 +16,9 @@ namespace MonitoringStation
 
         static void Main(string[] args)
         {
+
+            RabbitMqUtils.Send(Encoding.ASCII.GetBytes(ConfigurationManager.AppSettings["UserName"]),"init");
+
             var autoResetEvent = new AutoResetEvent(false);
 
             ManagementEventWatcher startWatch = new ManagementEventWatcher(
@@ -25,12 +29,13 @@ namespace MonitoringStation
             Console.WriteLine("Listing all current processes:");
             foreach (var s in ProcessUtils.GetProcessList())
             {
-                RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s));
+                RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s), "update");
             }
             Console.WriteLine("End of the list.");
 
             startWatch.Start();
-            autoResetEvent.WaitOne();
+
+            Console.ReadKey();
 
         }
     }

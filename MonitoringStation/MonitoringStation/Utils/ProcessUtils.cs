@@ -19,7 +19,7 @@ namespace MonitoringStation.Utils
         {
             var newProcessName = e.NewEvent.Properties["ProcessName"].Value as string;
             Console.WriteLine($"Process Created: {newProcessName}");
-            RabbitMqUtils.Send(Encoding.ASCII.GetBytes(newProcessName));
+            RabbitMqUtils.Send(Encoding.ASCII.GetBytes(newProcessName),"update");
         }
 
     }
