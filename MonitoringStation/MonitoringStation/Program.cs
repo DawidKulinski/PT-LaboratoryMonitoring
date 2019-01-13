@@ -19,22 +19,32 @@ namespace MonitoringStation
 
             RabbitMqUtils.Send(Encoding.ASCII.GetBytes(ConfigurationManager.AppSettings["UserName"]),"init");
 
+            Task.Run(() =>
+            {
+                while(true)
+                {
+                    Thread.Sleep(10 * 1000);
+                    RabbitMqUtils.Send(DesktopUtils.TakeScreenshot(), "screenshot");
+                }
+            });
+
             var autoResetEvent = new AutoResetEvent(false);
 
-            ManagementEventWatcher startWatch = new ManagementEventWatcher(
-                new WqlEventQuery(WmiProcessCreate));
-            startWatch.EventArrived += ProcessUtils.OnProcessCreated;
+            //ManagementEventWatcher startWatch = new ManagementEventWatcher(
+            //    new WqlEventQuery(WmiProcessCreate));
+            //startWatch.EventArrived += ProcessUtils.OnProcessCreated;
 
 
-            Console.WriteLine("Listing all current processes:");
-            foreach (var s in ProcessUtils.GetProcessList())
-            {
-                RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s), "update");
-            }
-            Console.WriteLine("End of the list.");
+            //Console.WriteLine("Listing all current processes:");
+            //foreach (var s in ProcessUtils.GetProcessList())
+            //{
+            //    RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s), "update");
+            //}
+            //Console.WriteLine("End of the list.");
 
-            startWatch.Start();
+            //startWatch.Start();
 
+            autoResetEvent.WaitOne();
             Console.ReadKey();
 
         }

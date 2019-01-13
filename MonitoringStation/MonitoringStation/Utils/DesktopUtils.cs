@@ -23,7 +23,7 @@ namespace MonitoringStation.Utils
             Compress = true;
         }
 
-        public static int TakeScreenshot()
+        public static byte[] TakeScreenshot()
         {
             Bitmap memoryImage;
             memoryImage = new Bitmap(DesktopResolution.Width, DesktopResolution.Height);
@@ -45,7 +45,7 @@ namespace MonitoringStation.Utils
                 memoryImage.Save(str, ImageFormat.Png);
             }
 
-            return str.ToArray().Length;
+            return str.ToArray();
 
         }
 

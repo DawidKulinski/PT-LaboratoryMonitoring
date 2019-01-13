@@ -25,7 +25,8 @@ defmodule Controllstation.MixProject do
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
       {:amqp, "~> 1.0"},
-      {:mongodb, ">= 0.0.0"},
+      #{:mongodb, "> 0.4.8-dev"},
+	  {:mongodb, git: "git://github.com/ankhers/mongodb.git"},
       {:poolboy, ">=0.0.0"}
     ]
   end

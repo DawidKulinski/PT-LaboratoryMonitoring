@@ -61,7 +61,7 @@ namespace MonitoringStation.Utils
 
         public static void Send(byte[] message, string type)
         {
-            Console.WriteLine(Encoding.ASCII.GetString(message));
+            //Console.WriteLine(Encoding.ASCII.GetString(message));
 
             PrepareConnection(model =>
             {
