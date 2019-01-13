@@ -12,21 +12,13 @@ defmodule MongoDB do
     :mongo |> Mongo.update_one("test-collection",%{station: stationName},
                     %{ "$push": %{processes: processName}})
     end
-
-    def upload_file(payload) do
-        # bucket = :mongo |> Mongo.GridFs.Bucket.new
-        # upload_stream = Mongo.GridFs.Upload.open_upload_stream bucket, "test.txt", j: true
-        
-        IO.puts "#{:binary.bin_to_list(payload)}"
-
-        # :binary.bin_to_list(payload) |> Mongo.GridFs.UploadStream.into(upload_stream) |> Stream.run()
-    end
 end
 
 
 defmodule Receive do
 import MongoDB
     def init_user(payload) do
+        File.mkdir(payload)
         MongoDB.insert_object payload
         IO.puts "InsertUser"
     end
@@ -35,18 +27,20 @@ import MongoDB
         MongoDB.update_object user_name, payload
         IO.puts "UpdateUser"
     end
-    def save_screenshot do
-        IO.puts "Screenshot"
+    def save_screenshot(username, data) do
+        datetime = Integer.to_string(:os.system_time(:millisecond))
+        {:ok, file} = File.open username <> "\\" <> datetime <> ".png", [:write]
+        IO.binwrite file, data
+        File.close file
     end
 
     def wait_for_messages do
         receive do
             {:basic_deliver, payload, meta} ->
-                IO.puts "#{meta.type}"
                 case meta.type do
                     "init" -> init_user payload
-                    "update" -> upload_file payload
-                    "screenshot" -> save_screenshot
+                    "update" -> update_user payload, meta.user_id
+                    "screenshot" -> save_screenshot meta.user_id, payload
                 end
             wait_for_messages
         end
