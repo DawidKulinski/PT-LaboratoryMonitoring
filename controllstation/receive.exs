@@ -1,6 +1,8 @@
 defmodule MongoDB do
     def init do
         {:ok, _} = Mongo.start_link(url: "mongodb://localhost:27017/test", name: :mongo)
+        :mongo |> Mongo.insert_one("ActiveUsers",
+        %{datetime: "sampleInput", active: []})
     end
 
     def insert_object(stationName) do
@@ -9,8 +11,13 @@ defmodule MongoDB do
     end
 
     def update_object(stationName, processName) do
-    :mongo |> Mongo.update_one("test-collection",%{station: stationName},
+    :mongo |> Mongo.update_one("Students",%{station: stationName},
                     %{ "$push": %{processes: processName}})
+    end
+
+    def add_user(userName) do
+        :mongo |> Mongo.update_one("ActiveUsers",%{datetime: "sampleInput"},
+        %{ "$push": %{active: userName}})
     end
 end
 
@@ -34,15 +41,26 @@ import MongoDB
         File.close file
     end
 
-    def wait_for_messages do
+    def get_username([head|_]) do
+            head |> elem(2)
+    end
+
+    def default(meta) do
+        case meta.routing_key do
+            "connection.created" -> get_username(meta.headers) |> MongoDB.add_user           
+        end
+    end
+
+    def wait_for_messages() do
         receive do
             {:basic_deliver, payload, meta} ->
                 case meta.type do
                     "init" -> init_user payload
                     "update" -> update_user payload, meta.user_id
                     "screenshot" -> save_screenshot meta.user_id, payload
+                    :undefined -> default meta
                 end
-            wait_for_messages
+            wait_for_messages()
         end
     end
 end
@@ -61,7 +79,9 @@ end
 
 {:ok, channel} = AMQP.Channel.open(connection)
 AMQP.Queue.declare(channel, "dataqueue")
+AMQP.Queue.bind(channel, "dataqueue", "amq.rabbitmq.event", routing_key: "connection.created")
 AMQP.Basic.consume(channel, "dataqueue", nil, no_ack: true)
+
 IO.puts " [*] Waiting for messages."
 
 MongoDB.init()
