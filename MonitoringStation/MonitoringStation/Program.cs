@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management;
@@ -35,16 +36,17 @@ namespace MonitoringStation
             startWatch.EventArrived += ProcessUtils.OnProcessCreated;
 
 
-            Console.WriteLine("Listing all current processes:");
-            foreach (var s in ProcessUtils.GetProcessList())
-            {
-                RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s), "update");
-            }
-            Console.WriteLine("End of the list.");
+            //Console.WriteLine("Listing all current processes:");
+            //foreach (var s in ProcessUtils.GetProcessList())
+            //{
+            //    RabbitMqUtils.Send(Encoding.ASCII.GetBytes(s), "update");
+            //}
+            //Console.WriteLine("End of the list.");
 
             startWatch.Start();
 
             autoResetEvent.WaitOne();
+
             Console.ReadKey();
 
         }
