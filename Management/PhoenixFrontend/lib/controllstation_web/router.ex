@@ -17,6 +17,8 @@ defmodule ControllstationWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/get_file", PageController, :get_file
+    get "/block_process", PageController, :block_process
   end
 
   # Other scopes may use custom stacks.

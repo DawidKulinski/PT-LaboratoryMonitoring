@@ -29,6 +29,8 @@ namespace MonitoringStation
                 }
             });
 
+            RabbitMqUtils.Receive();
+
             var autoResetEvent = new AutoResetEvent(false);
 
             ManagementEventWatcher startWatch = new ManagementEventWatcher(

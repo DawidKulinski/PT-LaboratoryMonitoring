@@ -16,11 +16,24 @@ namespace MonitoringStation.Utils
 
         public static bool Compress;
 
+
             
         static DesktopUtils()
         {
             DesktopResolution = Screen.PrimaryScreen.Bounds;
             Compress = true;
+        }
+
+        public static void ChangeState()
+        {
+            if (Compress)
+            {
+                Compress = false;
+            }
+            else
+            {
+                Compress = true;
+            }
         }
 
         public static byte[] TakeScreenshot()

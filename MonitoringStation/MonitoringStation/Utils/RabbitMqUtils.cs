@@ -20,6 +20,7 @@ namespace MonitoringStation.Utils
         private static readonly string _certPassword;
         private static readonly string _queueName;
         private static readonly string _userName;
+        public static readonly IModel channel;
 
         static RabbitMqUtils()
         {
@@ -30,21 +31,16 @@ namespace MonitoringStation.Utils
             _queueName = ConfigurationManager.AppSettings["QueueName"];
 
             _userName = ConfigurationManager.AppSettings["UserName"];
-        }
-        
 
-
-        private static void PrepareConnection(Action<IModel> sendAction)
-        {
             var factory = new ConnectionFactory()
             {
                 HostName = "127.0.0.1",
-                AuthMechanisms = new AuthMechanismFactory[] {new ExternalMechanismFactory()},
-                UserName = "client1",               
+                AuthMechanisms = new AuthMechanismFactory[] { new ExternalMechanismFactory() },
+                UserName = "client1",
                 Ssl = new SslOption
                 {
                     ServerName = "admin",
-                    CertPath = _certPath,                    
+                    CertPath = _certPath,
                     CertPassphrase = _certPassword,
                     Enabled = true
                 }
@@ -52,61 +48,55 @@ namespace MonitoringStation.Utils
 
             //factory.Ssl.AcceptablePolicyErrors = System.Net.Security.SslPolicyErrors.RemoteCertificateNameMismatch;
 
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                sendAction(channel);
-            }
+            var connection = factory.CreateConnection();
+            channel = connection.CreateModel();
         }
+        
 
         public static void Send(byte[] message, string type)
         {
-            //Console.WriteLine(Encoding.ASCII.GetString(message));
-
-            PrepareConnection(model =>
-            {
-                IBasicProperties props = model.CreateBasicProperties();
+                IBasicProperties props = channel.CreateBasicProperties();
 
                 props.UserId = "client1";
                 props.Type = type;
 
-                model.QueueDeclare(queue: _queueName,
+                channel.QueueDeclare(queue: _queueName,
                     durable: false,
                     exclusive: false,
                     autoDelete: false,
                     arguments: null);
 
-                model.BasicPublish(exchange:"",
+                channel.BasicPublish(exchange:"",
                     routingKey:_queueName,
                     basicProperties:props,
                     body:message);
-            });
         }
 
-        public static byte[] Receive()
+        public static void Receive()
         {
             byte[] message = new byte [1];
-            PrepareConnection(model =>
-            {
-                model.QueueDeclare(queue: _queueName,
-                    durable: false,
-                    exclusive: false,
-                    autoDelete: false,
-                    arguments: null);
 
-                var consumer = new EventingBasicConsumer(model);
+                var consumer = new EventingBasicConsumer(channel);
 
                 consumer.Received += (model1, ea) =>
                 {
-                    message = ea.Body;
+                    switch(ea.BasicProperties.Type)
+                    {
+                        case "compress":
+                            DesktopUtils.ChangeState();
+                            Console.WriteLine("Zmiana stanu: kompresja zrzutu ekranu");
+                            break;
+                        case "block":
+                            ProcessUtils.ProcessStateChange(Encoding.ASCII.GetString(ea.Body));
+                            Console.WriteLine($"Zmiana stanu: {Encoding.ASCII.GetString(ea.Body)}");
+                            break;
+                    }
                 };
 
-                model.BasicConsume(queue: "hello",
+                channel.BasicConsume(queue: _userName,
                     autoAck: true,
                     consumer: consumer);
-            });
 
-            return message;
         }
 
 

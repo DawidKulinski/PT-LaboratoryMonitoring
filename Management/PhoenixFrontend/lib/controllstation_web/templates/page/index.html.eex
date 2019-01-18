@@ -1,52 +1,53 @@
-<div class="jumbotron">
+<script>
+function random_character() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 10; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+function refresh()
+{
+  window.setInterval(function(){
+  var imgs = document.getElementsByTagName("img");
+  var date = random_character();
+  for(var i=0; i< imgs.length; i++)
+    { 
+      var temp = imgs[i].src;
+      if(temp.includes("/get_file"))
+        {
+          imgs[i].src = temp.slice(0,-10) + date;
+        }
+    }
+  },100000);
+}
+</script>
+<img src="" onerror="refresh()">
   <h2>Aktywni użytkownicy</h2>
-  <table>
+  <table class="table-bordered">
   <tr>
     <th>Nazwa użytkownika</th>
     <th>Uruchomione procesy</th>
+    <th>Stan ekranu</th>
   </tr>
   <%= for {username, process_list} <- processes(@conn) do %>
   <tr>
     <th>
       <%= username%>
-    <th>
+
+    </th>
     <th>
       <%= for process <- process_list do %>
-      <%= process %></br>
+        <a href="<%= static_path(@conn, "/block_process?username=" <> username <> "&processname=" <> process) %>"><%=process%></a><br/>
       <%end%>
+    </th>
+    <th>
+        <img src="/get_file?username=<%= username%>&test=1234567890">
     </th>
 <%end%>
   </table>
-</div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
-  </div>
-</div>
