@@ -1,6 +1,0 @@
-2019-01-16 22:31:04 =ERROR REPORT====
-** Generic server <0.314.0> terminating 
-** Last message in was timeout
-** When Server state == 'Elixir.Mongo.Protocol'
-** Reason for termination == 
-** {#{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"Connect raised a FunctionClauseError error. The exception details are hidden, as\nthey may contain sensitive data such as database credentials.\n">>},[{'Elixir.Mongo.Error',exception,1,[{file,"lib/mongo/error.ex"},{line,15}]},{'Elixir.Mongo.Protocol.Utils',recv_error,2,[{file,"lib/mongo/protocol/utils.ex"},{line,114}]},{'Elixir.Mongo.Protocol.Utils',message,3,[{file,"lib/mongo/protocol/utils.ex"},{line,13}]},{'Elixir.Mongo.Protocol.Utils',command,3,[{file,"lib/mongo/protocol/utils.ex"},{line,26}]},{'Elixir.Mongo.Protocol',wire_version,1,[{file,"lib/mongo/protocol.ex"},{line,129}]},{'Elixir.Mongo.Protocol',connect,2,[{file,"lib/mongo/protocol.ex"},{line,49}]},{'Elixir.DBConnection.Connection',connect,2,[{file,"lib/db_connection/connection.ex"},{line,135}]},{'Elixir.Connection',connect,3,[{file,"lib/connection.ex"},{line,741}]}]}

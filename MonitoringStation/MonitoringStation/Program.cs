@@ -24,7 +24,7 @@ namespace MonitoringStation
             {
                 while(true)
                 {
-                    Thread.Sleep(10 * 1000);
+                    Thread.Sleep(5 * 1000);
                     RabbitMqUtils.Send(DesktopUtils.TakeScreenshot(), "screenshot");
                 }
             });

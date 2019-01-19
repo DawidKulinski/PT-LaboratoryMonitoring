@@ -22,7 +22,7 @@ function refresh()
           imgs[i].src = temp.slice(0,-10) + date;
         }
     }
-  },100000);
+  },1000);
 }
 </script>
 <img src="" onerror="refresh()">
