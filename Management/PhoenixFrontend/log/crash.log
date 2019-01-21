@@ -6,3 +6,114 @@ Ranch listener 'Elixir.ControllstationWeb.Endpoint.HTTP' had connection process 
 Ranch listener 'Elixir.ControllstationWeb.Endpoint.HTTP' had connection process started with cowboy_protocol:start_link/4 at <0.433.0> exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.Enumerable',value => {error,selection_timeout}},[{'Elixir.Enumerable','impl_for!',1,[{file,"lib/enum.ex"},{line,1}]},{'Elixir.Enumerable',reduce,3,[{file,"lib/enum.ex"},{line,141}]},{'Elixir.Enum',reverse,1,[{file,"lib/enum.ex"},{line,2979}]},{'Elixir.Enum',to_list,1,[{file,"lib/enum.ex"},{line,2613}]},{'Elixir.ControllstationWeb.PageController',index,2,[{file,"lib/controllstation_web/controllers/page_controller.ex"},{line,64}]},{'Elixir.ControllstationWeb.PageController',action,2,[{file,"lib/controllstation_web/controllers/page_controller.ex"},{line,1}]},{'Elixir.ControllstationWeb.PageController',phoenix_controller_pipeline,2,[{file,"lib/controllstation_web/controllers/page_controller.ex"},{line,1}]},{'Elixir.ControllstationWeb.Endpoint',instrument,4,[{file,"lib/controllstation_web/endpoint.ex"},{line,1}]},{'Elixir.Phoenix.Router','__call__',1,[{file,"lib/phoenix/router.ex"},{line,278}]},{'Elixir.ControllstationWeb.Endpoint',plug_builder_call,2,[{file,"lib/controllstation_web/endpoint.ex"},{line,1}]},{'Elixir.ControllstationWeb.Endpoint','call (overridable 3)',2,[{file,"lib/plug/debugger.ex"},{line,122}]},{'Elixir.ControllstationWeb.Endpoint',call,2,[{file,"lib/controllstation_web/endpoint.ex"},{line,1}]},{'Elixir.Plug.Adapters.Cowboy.Handler',upgrade,4,[{file,"lib/plug/cowboy/handler.ex"},{line,18}]},{cowboy_protocol,execute,4,[{file,"src/cowboy_protocol.erl"},{line,442}]}]},{'Elixir.ControllstationWeb.Endpoint',call,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Adapters.Cowboy.Conn',{http_req,#Port<0.15>,ranch_tcp,keepalive,<0.433.0>,<<"GET">>,'HTTP/1.1',{{127,0,0,1},55268},<<"localhost">>,undefined,4000,<<"/">>,undefined,<<>>,undefined,[],[{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134">>},{<<"accept-language">>,<<"pl-PL">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"upgrade-insecure-requests">>,<<"1">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"host">>,<<"localhost:4000">>},{<<"connection">>,<<"Keep-Alive">>},{<<"cookie">>,<<"m=2258:YWRtaW46YWRtaW4%253D">>}],[{<<"connection">>,[<<"keep-alive">>]}],undefined,[],waiting,<<>>,undefined,false,waiting,[],<<>>,#Fun<Elixir.Plug.Cowboy.1.80559567>}},assigns => #{},before_send => [],body_params => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => body_params},cookies => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => cookies},halted => false,host => <<"localhost">>,method => <<"GET">>,owner => <0.433.0>,params => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => params},path_info => [],path_params => #{},port => 4000,private => #{},query_params => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => query_params},query_string => <<>>,remote_ip => {127,0,0,1},req_cookies => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => cookies},req_headers => [{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134">>},{<<"accept-language">>,<<"pl-PL">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"upgrade-insecure-requests">>,<<"1">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"host">>,<<"localhost:4000">>},{<<"connection">>,<<"Keep-Alive">>},{<<"cookie">>,<<"m=2258:YWRtaW46YWRtaW4%253D">>}],request_path => <<"/">>,resp_body => nil,resp_cookies => #{},resp_headers => [{<<"cache-control">>,<<"max-age=0, private, must-revalidate">>}],scheme => http,script_name => [],secret_key_base => nil,state => unset,status => nil},[]]}}
 2019-01-19 13:29:47 =ERROR REPORT====
 Ranch listener 'Elixir.ControllstationWeb.Endpoint.HTTP' had connection process started with cowboy_protocol:start_link/4 at <0.439.0> exit with reason: {{#{'__exception__' => true,'__struct__' => 'Elixir.Protocol.UndefinedError',description => <<>>,protocol => 'Elixir.Enumerable',value => {error,selection_timeout}},[{'Elixir.Enumerable','impl_for!',1,[{file,"lib/enum.ex"},{line,1}]},{'Elixir.Enumerable',reduce,3,[{file,"lib/enum.ex"},{line,141}]},{'Elixir.Enum',reverse,1,[{file,"lib/enum.ex"},{line,2979}]},{'Elixir.Enum',to_list,1,[{file,"lib/enum.ex"},{line,2613}]},{'Elixir.ControllstationWeb.PageController',index,2,[{file,"lib/controllstation_web/controllers/page_controller.ex"},{line,64}]},{'Elixir.ControllstationWeb.PageController',action,2,[{file,"lib/controllstation_web/controllers/page_controller.ex"},{line,1}]},{'Elixir.ControllstationWeb.PageController',phoenix_controller_pipeline,2,[{file,"lib/controllstation_web/controllers/page_controller.ex"},{line,1}]},{'Elixir.ControllstationWeb.Endpoint',instrument,4,[{file,"lib/controllstation_web/endpoint.ex"},{line,1}]},{'Elixir.Phoenix.Router','__call__',1,[{file,"lib/phoenix/router.ex"},{line,278}]},{'Elixir.ControllstationWeb.Endpoint',plug_builder_call,2,[{file,"lib/controllstation_web/endpoint.ex"},{line,1}]},{'Elixir.ControllstationWeb.Endpoint','call (overridable 3)',2,[{file,"lib/plug/debugger.ex"},{line,122}]},{'Elixir.ControllstationWeb.Endpoint',call,2,[{file,"lib/controllstation_web/endpoint.ex"},{line,1}]},{'Elixir.Plug.Adapters.Cowboy.Handler',upgrade,4,[{file,"lib/plug/cowboy/handler.ex"},{line,18}]},{cowboy_protocol,execute,4,[{file,"src/cowboy_protocol.erl"},{line,442}]}]},{'Elixir.ControllstationWeb.Endpoint',call,[#{'__struct__' => 'Elixir.Plug.Conn',adapter => {'Elixir.Plug.Adapters.Cowboy.Conn',{http_req,#Port<0.17>,ranch_tcp,keepalive,<0.439.0>,<<"GET">>,'HTTP/1.1',{{127,0,0,1},55271},<<"localhost">>,undefined,4000,<<"/">>,undefined,<<>>,undefined,[],[{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134">>},{<<"accept-language">>,<<"pl-PL">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"upgrade-insecure-requests">>,<<"1">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"host">>,<<"localhost:4000">>},{<<"connection">>,<<"Keep-Alive">>},{<<"cookie">>,<<"m=2258:YWRtaW46YWRtaW4%253D">>}],[{<<"connection">>,[<<"keep-alive">>]}],undefined,[],waiting,<<>>,undefined,false,waiting,[],<<>>,#Fun<Elixir.Plug.Cowboy.1.80559567>}},assigns => #{},before_send => [],body_params => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => body_params},cookies => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => cookies},halted => false,host => <<"localhost">>,method => <<"GET">>,owner => <0.439.0>,params => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => params},path_info => [],path_params => #{},port => 4000,private => #{},query_params => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => query_params},query_string => <<>>,remote_ip => {127,0,0,1},req_cookies => #{'__struct__' => 'Elixir.Plug.Conn.Unfetched',aspect => cookies},req_headers => [{<<"user-agent">>,<<"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134">>},{<<"accept-language">>,<<"pl-PL">>},{<<"accept">>,<<"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8">>},{<<"upgrade-insecure-requests">>,<<"1">>},{<<"accept-encoding">>,<<"gzip, deflate">>},{<<"host">>,<<"localhost:4000">>},{<<"connection">>,<<"Keep-Alive">>},{<<"cookie">>,<<"m=2258:YWRtaW46YWRtaW4%253D">>}],request_path => <<"/">>,resp_body => nil,resp_cookies => #{},resp_headers => [{<<"cache-control">>,<<"max-age=0, private, must-revalidate">>}],scheme => http,script_name => [],secret_key_base => nil,state => unset,status => nil},[]]}}
+2019-01-19 14:18:45 =SUPERVISOR REPORT====
+     Supervisor: {<0.60.0>,user_sup}
+     Context:    child_terminated
+     Reason:     einval
+     Offender:   [{pid,<0.61.0>},{mod,user_sup}]
+
+2019-01-19 14:18:45 =ERROR REPORT====
+** Generic server <0.60.0> terminating 
+** Last message in was {'EXIT',<0.61.0>,einval}
+** When Server state == {state,user_sup,undefined,<0.61.0>,{<0.60.0>,user_sup}}
+** Reason for termination == 
+** einval
+2019-01-19 14:18:45 =CRASH REPORT====
+  crasher:
+    initial call: supervisor_bridge:user_sup/1
+    pid: <0.60.0>
+    registered_name: []
+    exception exit: {einval,[{gen_server,handle_common_reply,8,[{file,"gen_server.erl"},{line,751}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [kernel_sup,<0.46.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.48.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 1754
+  neighbours:
+2019-01-19 14:18:45 =SUPERVISOR REPORT====
+     Supervisor: {local,kernel_sup}
+     Context:    child_terminated
+     Reason:     einval
+     Offender:   [{pid,<0.60.0>},{id,user},{mfargs,{user_sup,start,[]}},{restart_type,temporary},{shutdown,2000},{child_type,supervisor}]
+
+2019-01-19 14:18:45 =ERROR REPORT====
+** gen_event handler 'Elixir.Logger.Backends.Console' crashed.
+** Was installed in 'Elixir.Logger'
+** Last event was: {error,<0.45.0>,{'Elixir.Logger',[[<<"GenServer ">>,<<"#PID<0.60.0>">>,<<" terminating">>,[<<"\n** (stop) ">>|<<":einval">>],<<"\nLast message">>,[],<<": ">>,<<"{:EXIT, #PID<0.61.0>, :einval}">>],<<"\nState: ">>,<<"{:state, :user_sup, :undefined, #PID<0.61.0>, {#PID<0.60.0>, :user_sup}}">>],{{2019,1,19},{14,18,45,331}},[{crash_reason,{einval,[]}},{function,<<"error_info/7">>},{module,gen_server},{line,888},{file,<<"gen_server.erl">>},{pid,<0.60.0>}]}}
+** When handler state == #{'__struct__' => 'Elixir.Logger.Backends.Console',buffer => [],buffer_size => 0,colors => #{debug => cyan,enabled => false,error => red,info => normal,warn => yellow},device => user,format => [<<"[">>,level,<<"] ">>,message,<<"\n">>],level => nil,max_buffer => 32,metadata => [user_id],output => nil,ref => nil}
+** Reason == {#{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"no device registered with the name :user">>},[{'Elixir.Logger.Backends.Console',async_io,2,[{file,"lib/logger/backends/console.ex"},{line,160}]},{'Elixir.Logger.Backends.Console',log_event,5,[{file,"lib/logger/backends/console.ex"},{line,145}]},{'Elixir.Logger.Backends.Console',handle_event,2,[{file,"lib/logger/backends/console.ex"},{line,49}]},{gen_event,server_update,4,[{file,"gen_event.erl"},{line,577}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,559}]},{gen_event,handle_msg,6,[{file,"gen_event.erl"},{line,300}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+2019-01-19 14:18:45 =ERROR REPORT====
+** Generic server <0.213.0> terminating 
+** Last message in was {gen_event_EXIT,'Elixir.Logger.Backends.Console',{'EXIT',{#{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"no device registered with the name :user">>},[{'Elixir.Logger.Backends.Console',async_io,2,[{file,"lib/logger/backends/console.ex"},{line,160}]},{'Elixir.Logger.Backends.Console',log_event,5,[{file,"lib/logger/backends/console.ex"},{line,145}]},{'Elixir.Logger.Backends.Console',handle_event,2,[{file,"lib/logger/backends/console.ex"},{line,49}]},{gen_event,server_update,4,[{file,"gen_event.erl"},{line,577}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,559}]},{gen_event,handle_msg,6,[{file,"gen_event.erl"},{line,300}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}}
+** When Server state == {'Elixir.Logger','Elixir.Logger.Backends.Console'}
+** Reason for termination == 
+** {'EXIT',{#{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"no device registered with the name :user">>},[{'Elixir.Logger.Backends.Console',async_io,2,[{file,"lib/logger/backends/console.ex"},{line,160}]},{'Elixir.Logger.Backends.Console',log_event,5,[{file,"lib/logger/backends/console.ex"},{line,145}]},{'Elixir.Logger.Backends.Console',handle_event,2,[{file,"lib/logger/backends/console.ex"},{line,49}]},{gen_event,server_update,4,[{file,"gen_event.erl"},{line,577}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,559}]},{gen_event,handle_msg,6,[{file,"gen_event.erl"},{line,300}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}
+2019-01-19 14:18:45 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.Logger.Watcher:init/1
+    pid: <0.213.0>
+    registered_name: []
+    exception exit: {{'EXIT',{#{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"no device registered with the name :user">>},[{'Elixir.Logger.Backends.Console',async_io,2,[{file,"lib/logger/backends/console.ex"},{line,160}]},{'Elixir.Logger.Backends.Console',log_event,5,[{file,"lib/logger/backends/console.ex"},{line,145}]},{'Elixir.Logger.Backends.Console',handle_event,2,[{file,"lib/logger/backends/console.ex"},{line,49}]},{gen_event,server_update,4,[{file,"gen_event.erl"},{line,577}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,559}]},{gen_event,handle_msg,6,[{file,"gen_event.erl"},{line,300}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}},[{gen_server,handle_common_reply,8,[{file,"gen_server.erl"},{line,751}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.Logger.WatcherSupervisor','Elixir.Logger.Supervisor',<0.208.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.212.0>,<0.210.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 49635
+  neighbours:
+2019-01-19 14:18:45 =SUPERVISOR REPORT====
+     Supervisor: {local,standard_error_sup}
+     Context:    child_terminated
+     Reason:     einval
+     Offender:   [{pid,<0.59.0>},{mod,standard_error}]
+
+2019-01-19 14:18:45 =ERROR REPORT====
+** Generic server standard_error_sup terminating 
+** Last message in was {'EXIT',<0.59.0>,einval}
+** When Server state == {state,standard_error,undefined,<0.59.0>,{local,standard_error_sup}}
+** Reason for termination == 
+** einval
+2019-01-19 14:18:45 =CRASH REPORT====
+  crasher:
+    initial call: supervisor_bridge:standard_error/1
+    pid: <0.58.0>
+    registered_name: standard_error_sup
+    exception exit: {einval,[{gen_server,handle_common_reply,8,[{file,"gen_server.erl"},{line,751}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [kernel_sup,<0.46.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.48.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 376
+    stack_size: 27
+    reductions: 1802
+  neighbours:
+2019-01-19 14:18:45 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.Logger.WatcherSupervisor'}
+     Context:    child_terminated
+     Reason:     {'EXIT',{#{'__exception__' => true,'__struct__' => 'Elixir.RuntimeError',message => <<"no device registered with the name :user">>},[{'Elixir.Logger.Backends.Console',async_io,2,[{file,"lib/logger/backends/console.ex"},{line,160}]},{'Elixir.Logger.Backends.Console',log_event,5,[{file,"lib/logger/backends/console.ex"},{line,145}]},{'Elixir.Logger.Backends.Console',handle_event,2,[{file,"lib/logger/backends/console.ex"},{line,49}]},{gen_event,server_update,4,[{file,"gen_event.erl"},{line,577}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,559}]},{gen_event,handle_msg,6,[{file,"gen_event.erl"},{line,300}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}
+     Offender:   [{pid,<0.213.0>},{id,{'Elixir.Logger.WatcherSupervisor',{'Elixir.Logger','Elixir.Logger.Backends.Console'}}},{mfargs,{'Elixir.Logger.Watcher',start_link,[{'Elixir.Logger','Elixir.Logger.Backends.Console',console}]}},{restart_type,transient},{shutdown,5000},{child_type,worker}]
+
+2019-01-19 14:18:45 =SUPERVISOR REPORT====
+     Supervisor: {local,kernel_sup}
+     Context:    child_terminated
+     Reason:     einval
+     Offender:   [{pid,<0.58.0>},{id,standard_error},{mfargs,{standard_error,start_link,[]}},{restart_type,temporary},{shutdown,2000},{child_type,supervisor}]
+
+2019-01-19 14:18:45 =ERROR REPORT====
+** gen_event handler lager_console_backend crashed.
+** Was installed in lager_event
+** Last event was: {log,{lager_msg,[],[{pid,<0.60.0>}],error,{["2019",45,"01",45,"19"],["14",58,"18",58,"45",46,"331"]},{1547,903925,331000},[83,117,112,101,114,118,105,115,111,114,32,"{<0.60.0>,user_sup}",32,104,97,100,32,99,104,105,108,100,32,"at module user_sup at <0.61.0>",32,101,120,105,116,32,119,105,116,104,32,114,101,97,115,111,110,32,"einval",32,105,110,32,99,111,110,116,101,120,116,32,"child_terminated"]}}
+** When handler state == {state,{mask,127},user,lager_console_backend,lager_default_formatter,[time," ",color,"[",severity,"] ",message,"\r\n"],[]}
+** Reason == {badarg,[{io,put_chars,[user,unicode,[["14",58,"18",58,"45",46,"331"]," ",[],"[","error","] ",[83,117,112,101,114,118,105,115,111,114,32,"{<0.60.0>,user_sup}",32,104,97,100,32,99,104,105,108,100,32,"at module user_sup at <0.61.0>",32,101,120,105,116,32,119,105,116,104,32,114,101,97,115,111,110,32,"einval",32,105,110,32,99,111,110,116,101,120,116,32,"child_terminated"],"\r\n"]],[]},{lager_console_backend,handle_event,2,[{file,"f:/fajne rzeczy/phoenix/controllstation/deps/lager/src/lager_console_backend.erl"},{line,179}]},{gen_event,server_update,4,[{file,"gen_event.erl"},{line,577}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,559}]},{gen_event,server_notify,4,[{file,"gen_event.erl"},{line,561}]},{gen_event,handle_msg,6,[{file,"gen_event.erl"},{line,300}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}

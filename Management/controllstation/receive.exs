@@ -42,8 +42,6 @@ import MongoDB
         IO.puts "InsertUser"
     end
 
-
-
     def update_user(payload, user_name) do
         MongoDB.update_object user_name, payload
         IO.puts "#{payload}"
@@ -56,22 +54,15 @@ import MongoDB
         File.close file
     end
 
-
-
     def get_username([head|_]) do
             head |> elem(2)
     end
-
-
 
     def default(meta) do
         case meta.routing_key do
             "connection.created" -> get_username(meta.headers) |> MongoDB.add_user           
         end
-
     end
-
-
 
     def wait_for_messages() do
         receive do
